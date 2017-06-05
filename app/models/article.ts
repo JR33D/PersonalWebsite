@@ -1,14 +1,15 @@
 import Comment from './comment';
+import ArticleContent from './content';
 
 export default class Article {
     // Private Members
-    private _comments: Array<Comment> = null;
+    private _content: ArticleContent = null;
     private _id: number = null;
     private _name: string = null;
 
     // Public Properties (getters/setters)
-    public get comments(): Array<Comment> { return this._comments; }
-    public set comments(newComments: Array<Comment>) { this._comments = newComments; }
+    public get content(): ArticleContent { return this._content; }
+    public set content(newContent: ArticleContent) { this._content = newContent; }
 
     public get id(): number { return this._id; }
     public set id(newId: number) { this._id = newId; }
@@ -17,15 +18,9 @@ export default class Article {
     public set name(newName: string) { this._name = newName; }
 
     // Constructors
-    constructor(name: string, id: number, comments: Array<Comment> = []) {
+    constructor(id: number, name: string, content: ArticleContent) {
         this._id = id;
         this._name = name;
-        this._comments = comments;
-    }
-
-    // Action Methods
-    public addNewComment(comment: Comment): Array<Comment> {
-        this._comments.push(comment);
-        return this._comments;
+        this._content = content;
     }
 }

@@ -6,7 +6,8 @@ import { logger } from './services/logger';
 var defaultRoutes = require('./routes/defaultRoutes');
 
 export let api = restify.createServer({
-    name: settings.name
+    name: settings.name,
+    log: logger
 });
 
 restify.CORS.ALLOW_HEADERS.push('authorization');
@@ -23,5 +24,5 @@ defaultRoutes.applyRoutes(api, '/api');
 
 
 api.listen(settings.port, function () {
-    logger.info(`INFO: ${settings.name} is running at ${api.url}`);
+    logger.info(`INFO: ${ settings.name } is running at ${ api.url }`);
 });

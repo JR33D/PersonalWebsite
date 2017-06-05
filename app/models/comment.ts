@@ -5,7 +5,8 @@ export default class Comment {
     private _id: number = null;
     private _message: string = null;
     private _postedDate: Date = null;
-    private _user: User = null;
+    private _userId: number = null;
+    private _articleId: number = null;
 
     // Public Properties (getters/setters)
     public get id(): number { return this._id; }
@@ -17,14 +18,15 @@ export default class Comment {
     public get postedDate(): Date { return this._postedDate; }
     public set postedDate(newPostedDate: Date) { this._postedDate = newPostedDate; }
 
-    public get user(): User { return this._user; }
-    public set user(newUser: User) { this._user = newUser; }
+    public get userId(): number { return this._userId; }
+    public set userId(newUserId: number) { this._userId = newUserId; }
 
     // Constructors
-    constructor(id: number, message: string, postedDate: Date, user: User) {
+    constructor(id: number, message: string, postedDate: Date, userId: number, articleId: number) {
         this._id = id;
         this._message = message;
         this._postedDate = postedDate;
-        this._user = user;
+        this._userId = userId;
+        this._articleId = articleId;
     }
 }

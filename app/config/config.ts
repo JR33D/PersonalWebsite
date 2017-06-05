@@ -5,12 +5,14 @@ let port = process.env.PORT || 3000;
 
 export let settings: Config = {
     name: 'personal-website',
-    version: '1.0.0',
     port: port,
     env: env
 };
 
 if (env === 'production') {
-    settings.env = 'prod';
-    // other production settings
+    // production specific settings
+}
+
+if (env === 'development') {
+    // Develppment specific settings
 }
