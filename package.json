@@ -1,0 +1,39 @@
+{
+    "name": "PersonalWebsite",
+    "version": "1.0.0",
+    "description": "Personal Website written in typescript using node and restify.",
+    "main": "public/app/app.js",
+    "scripts": {
+        "pretest": "npm run compile",
+        "test": "node_modules/.bin/_mocha public/test/unit/**/*.spec.js",
+        "precompile": "node_modules/.bin/rimraf public",
+        "compile": "node_modules/.bin/tsc",
+        "prestart": "npm run compile",
+        "start": "node public/app/app.js"
+    },
+    "keywords": [
+        "typescript",
+        "restify"
+    ],
+    "author": "Jeremy Reed",
+    "license": "MIT",
+    "dependencies": {
+        "@types/chai": "^3.4.34",
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^6.0.45",
+        "@types/restify": "^2.0.33",
+        "@types/sinon": "^1.16.31",
+        "@types/supertest": "^1.1.31",
+        "restify": "^4.1.1",
+        "restify-router": "^0.4.2"
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "mocha": "^3.1.2",
+        "rimraf": "^2.6.1",
+        "sinon": "^1.17.6",
+        "supertest": "^2.0.0",
+        "tslint": "^3.15.1",
+        "typescript": "^2.0.3"
+    }
+}
